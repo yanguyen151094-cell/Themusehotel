@@ -4,71 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Muse Hotel Demo</title>
-  <!-- Link CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <script>
-  // Lấy các phần tử
-  var modal = document.getElementById("contactModal");
-  var btn = document.getElementById("bookingBtn");
-  var span = document.querySelector(".close");
-
-  // Khi click "Đặt Phòng" → mở modal
-  btn.onclick = function(event) {
-    event.preventDefault(); // tránh reload trang
-    modal.style.display = "flex";
-  }
-
-  // Khi click dấu X → đóng modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  // Khi click ra ngoài modal → đóng
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-</script>
-
-  <!-- Popup Modal -->
-<div id="contactModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Liên Hệ Đặt Phòng</h2>
-    <div class="contact-links">
-      <a href="https://zalo.me/0888808818" target="_blank">
-        <img src="images/zalo.png" alt="Zalo">
-      </a>
-      <a href="https://www.facebook.com/share/1BuHNRPtWU/?mibextid=wwXIfr" target="_blank">
-        <img src="images/facebook.png" alt="Facebook">
-      </a>
-      <a href="tel:0888808818">
-        <img src="images/phone.png" alt="Hotline">
-      </a>
-    </div>
-  </div>
-</div>
 
   <!-- ===== HEADER / NAVBAR ===== -->
-  <header id="navbar">
-    <div class="container navbar-inner">
-      <div class="logo">The Muse Hotel</div>
-      <nav>
-        <ul>
-          <li><a href="#home">Trang Chủ</a></li>
-          <li><a href="#rooms">Phòng</a></li>
-          <li><a href="#offers">Ưu Đãi</a></li>Z
-          <li><a href="#gallery">Bộ Sưu Tập</a></li>
-          <li><a href="#contact">Liên Hệ</a></li>
-          <li><a href="#" id="bookingBtn" class="btn-book">Đặt Phòng</a></li>
+<header id="navbar">
+  <div class="container navbar-inner">
+    <div class="logo">The Muse Hotel</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Trang Chủ</a></li>
+        <li><a href="#rooms">Phòng</a></li>
+        <li><a href="#offers">Ưu Đãi</a></li>
+        <li><a href="#gallery">Bộ Sưu Tập</a></li>
+        <li><a href="#contact">Liên Hệ</a></li>
+        <li><a href="#" id="bookingBtn" class="book-btn">Đặt Phòng</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-        </ul>
-      </nav>
-    </div>
-  </header>
 
   <!-- ===== HERO / SLIDER ===== -->
   <section id="home" class="hero">
@@ -78,42 +34,36 @@
       <div class="slide"><img src="images/banner9.jpg" alt="Banner 3"></div>
       <div class="slide"><img src="images/banner10.jpg" alt="Banner 4"></div>
       <div class="slide"><img src="images/banner11.jpg" alt="Banner 5"></div>
-      <div class="slide"><img src="images/banner6.jpg" alt="Banner 6"></div>
+      <div class="slide"><img src="images/banner12.jpg" alt="Banner 6"></div>
     </div>
 
     <div class="hero-overlay"></div>
     <div class="hero-text container">
       <h1>Welcome to The Muse Hotel</h1>
       <p>Trải Nghiệm Sự Thoải Mái Và Sang Trọng Không Ai Sánh Bằng!</p>
-      <a href="#booking" class="btn btn-primary">Kiểm Tra Phòng Hiện Có</a>
+      <button type="button" class="btn btn-primary btn-book">Kiểm Tra Phòng Hiện Có</button>
     </div>
-
-    <div class="slider-controls">
-      <button class="prev" aria-label="Previous slide">&#10094;</button>
-      <button class="next" aria-label="Next slide">&#10095;</button>
-    </div>
-    <div class="dots"></div>
   </section>
 
   <!-- ===== ROOMS SECTION ===== -->
   <section id="rooms" class="section">
     <div class="container">
-      <h2>Cảnh Quan Phòng</h2>
+      <h2>Không Gian Nghỉ Dưỡng </h2>
       <div class="rooms-grid">
         <div class="room">
           <img src="images/banner8.jpg" alt="Room 1">
           <h3>Phòng Đôi</h3>
-          <p>Phòng đôi hiện đại với 2 giường rộng rãi, không gian sáng thoáng và  view cửa sổ tuyệt đẹp.Nội thất sang trọng.Tiện nghi đầy đủ và mang đến trải nghiệm thoải mái và đẳng cấp cho Du Khách!  </p>
+          <p>Phòng đôi hiện đại với 2 giường rộng rãi, không gian sáng thoáng và view cửa sổ tuyệt đẹp. Nội thất sang trọng, tiện nghi đầy đủ, mang đến trải nghiệm nghỉ dưỡng thoải mái và đẳng cấp cho cả du khách và khách công tác.</p>
         </div>
         <div class="room">
           <img src="images/banner9.jpg" alt="Room 2">
           <h3>Phòng Đơn</h3>
-          <p>Phòng nghỉ hiện đại với cửa sổ vòm lớn đón ánh sáng tự nhiên, giường êm ái sang trọng, nội thất gọn gàng tinh tế – mang đến không gian thư giãn thoải mái và yên bình cho kỳ nghỉ của bạn.</p>
+          <p>Phòng nghỉ hiện đại với cửa sổ vòm lớn đón ánh sáng tự nhiên, giường êm ái sang trọng, nội thất gọn gàng tinh tế – mang đến không gian thư giãn thoải mái và yên bình cho kỳ nghỉ của bạn..</p>
         </div>
         <div class="room">
           <img src="images/banner13.jpg" alt="Room 3">
           <h3>Phòng Ăn Uống</h3>
-          <p>Phòng ăn được thiết kế hiện đại, thoáng đãng với cửa kính lớn đón ánh sáng tự nhiên. Không gian trang nhã nhờ sự kết hợp hài hòa giữa bàn ghế màu trung tính và sofa nâu ấm áp. Cây xanh và tranh treo tường tạo điểm nhấn sinh động, mang lại cảm giác gần gũi và dễ chịu. Đây là nơi lý tưởng để thưởng thức bữa ăn thoải mái, trò chuyện cùng bạn bè và gia đình trong bầu không khí thân thiện, ấm cúng.</p>
+          <p>Phòng ăn được thiết kế hiện đại, thoáng đãng với cửa kính lớn đón ánh sáng tự nhiên. Không gian trang nhã nhờ sự kết hợp hài hòa giữa bàn ghế màu trung tính và sofa nâu ấm áp. Cây xanh và tranh treo tường tạo điểm nhấn sinh động, mang lại cảm giác gần gũi và dễ chịu. Đây là nơi lý tưởng để thưởng thức bữa ăn thoải mái, trò chuyện cùng bạn bè và gia đình trong bầu không khí thân thiện, ấm cúng..</p>
         </div>
       </div>
     </div>
@@ -126,7 +76,7 @@
       <div class="offers-grid">
         <div class="offer">
           <h3>3 Đêm 2 Ngày</h3>
-          <p>Liên Hệ Hỗ Trợ Để Nhận Ữu Đãi.</p>
+          <p>Liên Hệ Hỗ Trợ Để Nhận Ưu Đãi.</p>
         </div>
         <div class="offer">
           <h3>Khách Đặt Lịch Đi Công Tác</h3>
@@ -137,60 +87,48 @@
   </section>
 
   <!-- ===== GALLERY ===== -->
-<section id="gallery" class="section">
-  <div class="container">
-    <h2>Phòng Hiện Có TheMuse Hotel</h2>
-    <div class="gallery-grid">
-      
-      <div class="gallery-item">
-        <img src="images/banner8.jpg" alt="Gallery 1">
-        <p>Phòng 2 Giường Đôi</p>
-        <span class="price">1.150.000Đ / đêm</span>
-        <a href="#contact" class="btn-book">Đặt Phòng</a>
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/banner10.jpg" alt="Gallery 2">
-        <p>Phòng 1 Giường Đơn</p>
-        <span class="price">750.000Đ / đêm</span>
-        <a href="#contact" class="btn-book">Đặt Phòng</a>
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/banner11.jpg" alt="Gallery 3">
-        <p>Phòng View Cửa Sổ Lớn</p>
-        <span class="price">850.000Đ / đêm</span>
-        <a href="#contact" class="btn-book">Đặt Phòng</a>
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/banner14.jpg" alt="Gallery 4">
-        <p>Phòng Sang Trọng Cao Cấp</p>
-        <span class="price">950.000Đ / đêm</span>
-        <a href="#contact" class="btn-book">Đặt Phòng</a>
-      </div>
-<div class="gallery-item">
-        <img src="images/banner12.jpg" alt="Gallery 5">
-        <p>Phòng Đơn Cao Cấp Có Bồn Tắm </p>
-        <span class="price">950.000Đ / đêm</span>
-        <a href="#contact" class="btn-book">Đặt Phòng</a>
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>Phòng Ốc & Tiện Ích</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/banner8.jpg" alt="Gallery 1">
+          <p>Phòng 2 Giường Đôi</p>
+          <span class="price">1.150.000Đ / đêm</span>
+          <button type="button" class="btn-book">Đặt phòng</button>
+        </div>
+        <div class="gallery-item">
+          <img src="images/banner10.jpg" alt="Gallery 2">
+          <p>Phòng 1 Giường Lớn Có Bồn Tắm</p>
+          <span class="price">950.000Đ / đêm</span>
+          <button type="button" class="btn-book">Đặt phòng</button>
+        </div>
+        <div class="gallery-item">
+          <img src="images/banner11.jpg" alt="Gallery 3">
+          <p>Phòng View Cửa Sổ Lớn Rộng</p>
+          <span class="price">1.050.000Đ / đêm</span>
+          <button type="button" class="btn-book">Đặt phòng</button>
+        </div>
+        <div class="gallery-item">
+          <img src="images/banner12.jpg" alt="Gallery 3">
+          <p>Phòng View Cửa Sổ Lớn</p>
+          <span class="price">850.000Đ / đêm</span>
+          <button type="button" class="btn-book">Đặt phòng</button>
       </div>
       <div class="gallery-item">
-        <img src="images/banner16.jpg" alt="Gallery 6">
-        <p>Phòng Đơn Gối Chiếc</p>
-        <span class="price">750.000Đ / đêm</span>
-        <a href="#contact" class="btn-book">Đặt Phòng</a>
-      </div>
+          <img src="images/banner9.jpg" alt="Gallery 3">
+          <p>Phòng View Cửa Sổ Lớn</p>
+          <span class="price">750.000Đ / đêm</span>
+          <button type="button" class="btn-book">Đặt phòng</button>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="section bg-light">
     <div class="container">
       <h2>Địa Chỉ Liên Hệ</h2>
-      <p>Địa chỉ: Đồi rồng, Đồ Sơn , TP. Hải Phòng</p>
-      <p>Email: ngoctung055@gmail.com| Điện thoại: 088.880.8818</p>
+      <p>Địa chỉ: Đồi Rồng, Đồ Sơn , TP. Hải Phòng</p>
+      <p>Email: ngoctung055@gmail.com | Điện thoại: 088.880.8818</p>
     </div>
   </section>
 
@@ -201,9 +139,35 @@
     </div>
   </footer>
 
+  <!-- ===== MODAL FORM ===== -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Form Đặt Phòng</h2>
+      <form id="bookingForm">
+        <label>Họ và tên:
+          <input type="text" name="fullname" required>
+        </label>
+        <label>Số điện thoại:
+          <input type="tel" name="phone" required>
+        </label>
+        <label>Số người:
+          <input type="number" name="guests" min="1" value="1" required>
+        </label>
+        <label>Ngày nhận:
+          <input type="date" name="checkin" required>
+        </label>
+        <label>Ngày trả:
+          <input type="date" name="checkout" required>
+        </label>
+        <button type="submit" class="submit-btn">Đặt Phòng</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Link JavaScript -->
   <script src="script.js"></script>
-<!-- Social Links -->
+  <!-- ===== SOCIAL BAR ===== -->
 <div class="social-bar">
   <a href="https://www.facebook.com/share/1BuHNRPtWU/?mibextid=wwXIfr" target="_blank" class="icon fb">
     <img src="images/facebook.png" alt="Facebook">
