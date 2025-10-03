@@ -3,27 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Muse Hotel Demo</title>
+  <title>The Muse Hotel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- ===== HEADER / NAVBAR ===== -->
-<header id="navbar">
+<<header id="navbar">
   <div class="container navbar-inner">
     <div class="logo">The Muse Hotel</div>
+
+    <!-- Nút hamburger -->
+    <div class="menu-toggle">&#9776;</div>
+
+    <!-- Menu -->
     <nav>
       <ul>
         <li><a href="#home">Trang Chủ</a></li>
-        <li><a href="#rooms">Phòng</a></li>
+        <li><a href="#gallery">Phòng</a></li>
         <li><a href="#offers">Ưu Đãi</a></li>
         <li><a href="#gallery">Bộ Sưu Tập</a></li>
         <li><a href="#contact">Liên Hệ</a></li>
-        <li><a href="#" id="bookingBtn" class="book-btn">Đặt Phòng</a></li>
+        <li><a href="#booking" class="book-btn">Đặt Phòng</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
+
 
 
   <!-- ===== HERO / SLIDER ===== -->
@@ -39,32 +46,87 @@
 
     <div class="hero-overlay"></div>
     <div class="hero-text container">
-      <h1>Welcome to The Muse Hotel</h1>
-      <p>Trải Nghiệm Sự Thoải Mái Và Sang Trọng Không Ai Sánh Bằng!</p>
+      <h1>Welcome to TheMuse Hotel</h1>
+      <p>• The Muse – Biểu tượng của sự sang trọng.Nâng tầm trải nghiệm, khẳng định phong cách.</p>
       <button type="button" class="btn btn-primary btn-book">Kiểm Tra Phòng Hiện Có</button>
     </div>
   </section>
+<!-- Tiện ích khu du lịch Đồi Rồng -->
+<section class="resort-intro">
+  <div class="container">
+    <h2 class="resort-title">🏖 Tiện Ích Khu Du Lịch Đồi Rồng</h2>
+    <div class="resort-grid">
+      
+      <!-- Card 1 -->
+      <div class="resort-card">
+        <img src="images/beach.jpg" alt="Bãi biển Đồi Rồng">
+        <h3>Bãi Biển Nhân Tạo</h3>
+        <p>Chiều dài gần <strong>1 km</strong>, diện tích hơn <strong>23 ha</strong>, bãi cát vàng và hệ thống lọc nước hiện đại. 
+          Trải nghiệm SUP, kayak, thuyền thúng, xe đạp nước và nhiều hoạt động biển hấp dẫn.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="resort-card">
+        <img src="images/golf.jpg" alt="Sân golf Đồi Rồng">
+        <h3>Sân Golf Quốc Tế</h3>
+        <p>Sân golf <strong>18 hố</strong> đạt chuẩn quốc tế, được thiết kế hiện đại, là điểm hẹn lý tưởng cho những golfer 
+          yêu thích sự thử thách và đẳng cấp.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="resort-card">
+        <img src="images/aquapark.jpg" alt="Công viên nước Đồi Rồng">
+        <h3>Công Viên Nước</h3>
+        <p>Hệ thống công viên nước hiện đại, phù hợp cho cả gia đình. Bể sóng nhân tạo, khu trò chơi nước, 
+          dịch vụ tiện ích đầy đủ cho một ngày vui chơi trọn vẹn.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="resort-card">
+        <img src="images/square.jpg" alt="Quảng trường sự kiện">
+        <h3>Quảng Trường Biểu Tượng</h3>
+        <p>Diện tích gần <strong>7 ha</strong>, đài phun nước và hệ thống ánh sáng hiện đại. 
+          Nơi tổ chức lễ hội, sự kiện âm nhạc, team building, phố đi bộ sầm uất.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- ===== ROOMS SECTION ===== -->
   <section id="rooms" class="section">
     <div class="container">
       <h2>Không Gian Nghỉ Dưỡng </h2>
       <div class="rooms-grid">
-        <div class="room">
+      <div class="room facility-card">
           <img src="images/banner8.jpg" alt="Room 1">
           <h3>Phòng Đôi</h3>
           <p>Phòng đôi hiện đại với 2 giường rộng rãi, không gian sáng thoáng và view cửa sổ tuyệt đẹp. Nội thất sang trọng, tiện nghi đầy đủ, mang đến trải nghiệm nghỉ dưỡng thoải mái và đẳng cấp cho cả du khách và khách công tác.</p>
         </div>
-        <div class="room">
+      <div class="room facility-card">
           <img src="images/banner9.jpg" alt="Room 2">
           <h3>Phòng Đơn</h3>
           <p>Phòng nghỉ hiện đại với cửa sổ vòm lớn đón ánh sáng tự nhiên, giường êm ái sang trọng, nội thất gọn gàng tinh tế – mang đến không gian thư giãn thoải mái và yên bình cho kỳ nghỉ của bạn..</p>
         </div>
-        <div class="room">
+      <div class="room facility-card">
           <img src="images/banner13.jpg" alt="Room 3">
           <h3>Phòng Ăn Uống</h3>
           <p>Phòng ăn được thiết kế hiện đại, thoáng đãng với cửa kính lớn đón ánh sáng tự nhiên. Không gian trang nhã nhờ sự kết hợp hài hòa giữa bàn ghế màu trung tính và sofa nâu ấm áp. Cây xanh và tranh treo tường tạo điểm nhấn sinh động, mang lại cảm giác gần gũi và dễ chịu. Đây là nơi lý tưởng để thưởng thức bữa ăn thoải mái, trò chuyện cùng bạn bè và gia đình trong bầu không khí thân thiện, ấm cúng..</p>
         </div>
+      <div class="room facility-card">
+          <img src="images/banner18.jpg" alt="Room 4">
+          <h3>Không Gian Ngoài Trời</h3>
+          <p>Không gian ngoài trời thoáng đãng, yên bình với bàn ghế gọn gàng, thích hợp để ngồi thưởng thức cà phê hay trò chuyện cùng bạn bè. Phía xa là cảnh hoàng hôn rực rỡ buông xuống, ánh nắng vàng trải dài trên mặt đường và những hàng cây xanh mát, tạo nên khung cảnh lãng mạn và thư giãn. Đây là nơi lý tưởng để tận hưởng khoảnh khắc bình yên giữa thiên nhiên và nhịp sống nhẹ nhàng</p>
+      </div>
+      <div class="room facility-card">
+          <img src="images/banner100.jpg" alt="Room 4">
+          <h3>Buffet Miễn Phí Mùa Hè</h3>
+          <p>Thưởng thức bữa sáng buffet miễn phí với thực đơn phong phú: phở bò nóng hổi, bánh cuốn chả, xôi ruốc, salad tươi mát, bánh mì que, xúc xích và rau củ luộc, kèm trà, cà phê và nước trái cây. Khởi đầu ngày mới ngon miệng và tràn đầy năng lượng</p>
+      </div>
+      <div class="room facility-card">
+          <img src="images/banner101.jpg" alt="Room 4">
+          <h3>Thả Hồn Bên Hồ  Đắm Say Cùng Hoàng Hôn Tuyệt Đẹp”</h3>
+          <p>Từ ban công khách sạn, du khách có thể chiêm ngưỡng khung cảnh tuyệt đẹp với mặt hồ uốn lượn hiền hòa, ôm trọn dãy phố sắc màu hiện đại và những triền núi xanh mát. Khi hoàng hôn buông xuống, cả không gian bừng sáng trong gam màu vàng cam rực rỡ, tạo nên một bức tranh lãng mạn và yên bình – nơi lý tưởng để thư giãn và tận hưởng kỳ nghỉ trọn vẹn</p>
       </div>
     </div>
   </section>
@@ -86,48 +148,124 @@
     </div>
   </section>
 
-  <!-- ===== GALLERY ===== -->
-  <section id="gallery" class="section">
-    <div class="container">
-      <h2>Phòng Ốc & Tiện Ích</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="images/banner8.jpg" alt="Gallery 1">
-          <p>Phòng 2 Giường Đôi</p>
-          <span class="price">1.150.000Đ / đêm</span>
-          <button type="button" class="btn-book">Đặt phòng</button>
-        </div>
-        <div class="gallery-item">
-          <img src="images/banner10.jpg" alt="Gallery 2">
-          <p>Phòng 1 Giường Lớn Có Bồn Tắm</p>
-          <span class="price">950.000Đ / đêm</span>
-          <button type="button" class="btn-book">Đặt phòng</button>
-        </div>
-        <div class="gallery-item">
-          <img src="images/banner11.jpg" alt="Gallery 3">
-          <p>Phòng View Cửa Sổ Lớn Rộng</p>
-          <span class="price">1.050.000Đ / đêm</span>
-          <button type="button" class="btn-book">Đặt phòng</button>
-        </div>
-        <div class="gallery-item">
-          <img src="images/banner12.jpg" alt="Gallery 3">
-          <p>Phòng View Cửa Sổ Lớn</p>
-          <span class="price">850.000Đ / đêm</span>
-          <button type="button" class="btn-book">Đặt phòng</button>
-      </div>
-      <div class="gallery-item">
-          <img src="images/banner9.jpg" alt="Gallery 3">
-          <p>Phòng View Cửa Sổ Lớn</p>
-          <span class="price">750.000Đ / đêm</span>
-          <button type="button" class="btn-book">Đặt phòng</button>
-    </div>
-  </section>
+  <!-- ===== GALLERY 1 ===== -->
+<section id="gallery1" class="section">
+  <div class="container">
+    <h2>Phòng Ốc & Tiện Ích</h2>
+    <!-- Hotel 1 -->
+<div class="hotel-block">
+  <div class="hotel-header">
+    <div class="hotel-title">THEMUSE HOTEL 1</div>
+    <p class="hotel-desc">
+      TheMuse Hotel 1 : TheMuse Hotel sở hữu vị trí đắc địa ngay trục đường chính, kết nối thiên nhiên và giao thông thuận tiện. Từ phòng nghỉ, du khách chiêm ngưỡng công viên xanh, biển xa lấp lánh và nhịp sống sôi động nơi biển – đất liền.
+</p>
+  </div>
 
+  <div class="gallery-grid">
+      <div class="gallery-item"
+           data-images='["images/banner30.jpg","images/banner30-2.jpg","images/banner30-3.jpg","images/banner30-4.jpg"]'>
+        <img src="images/banner30.jpg" alt="Phòng 2 Giường Đôi">
+        <p>Phòng  Giường Đôi View Tòa Nhà </p>
+        <span class="price">1.150.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+
+<div class="gallery-item"
+           data-images='["images/banner8.jpg","images/banner8-2.jpg","images/banner8-3.jpg"]'>
+        <img src="images/banner8.jpg" alt="Phòng 2 Giường Đôi">
+        <p>Phòng  Giường Đôi View Công Viên</p>
+        <span class="price">1.150.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+
+      <div class="gallery-item"
+           data-images='["images/banner10.jpg","images/banner10-2.jpg","images/banner10-3.jpg"]'>
+        <img src="images/banner10.jpg" alt="Phòng 1 Giường Lớn Có Bồn Tắm">
+        <p>Phòng 1 Giường Lớn Có Bồn Tắm</p>
+        <span class="price">950.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+
+      <div class="gallery-item"
+           data-images='["images/banner11.jpg","images/banner11-2.jpg","images/banner11-3.jpg"]'>
+        <img src="images/banner11.jpg" alt="Phòng View Cửa Sổ Lớn Rộng">
+        <p>Phòng View Công Viên</p>
+        <span class="price">1.050.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+
+      <div class="gallery-item"
+           data-images='["images/banner12.jpg","images/banner12-2.jpg","images/banner12-3.jpg","images/banner12-4.jpg"]'>
+        <img src="images/banner12.jpg" alt="Phòng View Cửa Sổ Lớn">
+        <p>Phòng View Công Viên</p>
+        <span class="price">850.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+       <div class="gallery-item"
+           data-images='["images/banner32.jpg","images/banner32-2.jpg","images/banner32-3.jpg"]'>
+        <img src="images/banner32.jpg" alt="Phòng View Cửa Sổ Lớn">
+        <p>Phòng View Công Viên</p>
+        <span class="price">750.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+    </div>
+  
+  
+</div>
+</div>
+  </div>
+</section>
+<!-- ===== GALLERY 2 ===== -->
+<section id="gallery2" class="section">
+  <div class="container">
+    <!-- Hotel 2 -->
+<div class="hotel-block">
+  <div class="hotel-header">
+    <div class="hotel-title">THEMUSE HOTEL 3</div>
+    <p class="hotel-desc">
+      TheMuse Hotel 3 : “TheMuse Hotel – Nơi hội tụ sắc xanh và biểu tượng Đồi Rồng. Tọa lạc tại trung tâm khu du lịch, khách sạn mang đến tầm nhìn hiếm có: công viên xanh, hồ nước trong lành và biểu tượng Đồi Rồng hùng vĩ – niềm tự hào của Đồ Sơn.
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+      <div class="gallery-item"
+           data-images='["images/banner24-1.jpg","images/banner24-2.jpg","images/banner24-3.jpg","images/banner24-1.jpg","images/banner24-4.jpg"]'>
+        <img src="images/banner24-1.jpg" alt="Phòng View Cửa Sổ Lớn">
+        <p>Phòng Đơn View Đồi Và Hồ</p>
+        <span class="price">1.000.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+<div class="gallery-item"
+           data-images='["images/banner26.jpg","images/banner26-2.jpg","images/banner26-3.jpg","images/banner12-4.jpg"]'>
+        <img src="images/banner26.jpg" alt="Phòng View Cửa Sổ Lớn">
+        <p>Phòng View Dãy Nhà 7 Màu</p>
+        <span class="price">600.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+      <div class="gallery-item"
+           data-images='["images/banner27.jpg","images/banner27-2.jpg","images/banner27-3.jpg","images/banner12-4.jpg"]'>
+        <img src="images/banner27.jpg" alt="Phòng View Cửa Sổ Lớn">
+        <p>Phòng View Dãy 7 Màu Rộng</p>
+        <span class="price">800.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+      <div class="gallery-item"
+           data-images='["images/banner31.jpg","images/banner31-2.jpg","images/banner31-3.jpg","images/banner31-4.jpg"]'>
+        <img src="images/banner31.jpg" alt="Phòng View Cửa Sổ Lớn">
+        <p>Phòng Bình Dân Nhưng Không Kém Phần Sang Trọng</p>
+        <span class="price">500.000Đ / đêm</span>
+        <button type="button" class="btn-book">Đặt phòng</button>
+      </div>
+    </div>
+  </div>
+</section>
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="section bg-light">
     <div class="container">
       <h2>Địa Chỉ Liên Hệ</h2>
-      <p>Địa chỉ: Đồi Rồng, Đồ Sơn , TP. Hải Phòng</p>
+      <p>The Muse 1: KL12 Khu du lịch quốc tế Đồi Rồng Đồ Sơn Hải Phòng</p>
+      <p>The Muse 2: KL 2.22 Khu du lịch quốc tế Đồi Rồng Đồ Sơn Hải Phòng</p>
+      <p>The Muse 3: Kl 1.36 Khu du lịch quốc tế Đồi Rồng Đồ Sơn Hải Phòng</p>
       <p>Email: ngoctung055@gmail.com | Điện thoại: 088.880.8818</p>
     </div>
   </section>
@@ -143,7 +281,7 @@
   <div id="bookingModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Form Đặt Phòng</h2>
+      <h2> Đặt Phòng</h2>
       <form id="bookingForm">
         <label>Họ và tên:
           <input type="text" name="fullname" required>
@@ -166,7 +304,7 @@
   </div>
 
   <!-- Link JavaScript -->
-  <script src="script.js"></script>
+
   <!-- ===== SOCIAL BAR ===== -->
 <div class="social-bar">
   <a href="https://www.facebook.com/share/1BuHNRPtWU/?mibextid=wwXIfr" target="_blank" class="icon fb">
@@ -179,6 +317,20 @@
     <img src="images/phone.png" alt="Phone">
   </a>
 </div>
+<!-- LIGHTBOX (thêm ngay trước </body>) -->
+<div id="lightbox" class="lightbox hidden" aria-hidden="true">
+  <button class="lb-close" aria-label="Đóng">&times;</button>
+  <button class="lb-prev" aria-label="Ảnh trước">&lsaquo;</button>
+  <img class="lb-img" alt="Gallery image" />
+  <button class="lb-next" aria-label="Ảnh sau">&rsaquo;</button>
+
+  <!-- thêm vùng dot indicator ngay ở đây -->
+  <div class="lb-dots" role="tablist" aria-label="Chọn ảnh"></div>
+
+  <div class="lb-count"></div>
+</div>
+
+<script src="script.js" defer></script>
 
 </body>
 </html>
