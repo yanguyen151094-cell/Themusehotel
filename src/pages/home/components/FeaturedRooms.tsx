@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import { rooms } from '../../../mocks/rooms';
+import { supabase, Room } from '../../../lib/supabase';
 
 export default function FeaturedRooms() {
   const [visible, setVisible] = useState(false);
+  const [featured, setFeatured] = useState<Room[]>([]);
   const ref = useRef<HTMLDivElement>(null);
-  const featured = rooms.slice(0, 3);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -14,6 +14,19 @@ export default function FeaturedRooms() {
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const { data } = await supabase
+        .from('rooms')
+        .select('*')
+        .eq('is_active', true)
+        .order('sort_order')
+        .limit(3);
+      setFeatured(data ?? []);
+    };
+    fetch();
   }, []);
 
   return (
@@ -29,10 +42,7 @@ export default function FeaturedRooms() {
               <span className="italic font-normal">Được Yêu Thích</span>
             </h2>
           </div>
-          <Link
-            to="/rooms"
-            className="flex items-center gap-2 text-sm font-medium text-gold hover:text-gold-dark transition-colors whitespace-nowrap cursor-pointer"
-          >
+          <Link to="/rooms" className="flex items-center gap-2 text-sm font-medium text-gold hover:text-gold-dark transition-colors whitespace-nowrap cursor-pointer">
             Xem tất cả phòng <i className="ri-arrow-right-line"></i>
           </Link>
         </div>
@@ -51,7 +61,7 @@ export default function FeaturedRooms() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-5">
-                <span className="text-xs text-gold/80 font-medium">{room.hotelName}</span>
+                <span className="text-xs text-gold/80 font-medium">{room.hotel_name}</span>
                 <h3 className="font-serif text-lg font-bold text-white mb-1">{room.name}</h3>
                 <div className="flex items-center justify-between">
                   <div>
@@ -65,10 +75,7 @@ export default function FeaturedRooms() {
                 </div>
               </div>
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <Link
-                  to="/rooms"
-                  className="bg-gold text-white text-sm font-medium px-6 py-2.5 rounded-full transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 whitespace-nowrap"
-                >
+                <Link to="/rooms" className="bg-gold text-white text-sm font-medium px-6 py-2.5 rounded-full transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 whitespace-nowrap">
                   Đặt Phòng Này
                 </Link>
               </div>
