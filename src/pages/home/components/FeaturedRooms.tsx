@@ -23,7 +23,7 @@ export default function FeaturedRooms() {
         .select('*')
         .eq('is_active', true)
         .order('sort_order')
-        .limit(3);
+        .limit(9);
       setFeatured(data ?? []);
     };
     fetch();
@@ -47,42 +47,75 @@ export default function FeaturedRooms() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {featured.map((room, i) => (
-            <div
-              key={room.id}
-              className={`group relative rounded-2xl overflow-hidden h-72 md:h-80 cursor-pointer transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              style={{ transitionDelay: `${i * 150}ms` }}
-            >
-              <img
-                src={room.image}
-                alt={room.name}
-                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <span className="text-xs text-gold/80 font-medium">{room.hotel_name}</span>
-                <h3 className="font-serif text-lg font-bold text-white mb-1">{room.name}</h3>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-gold font-semibold text-base">{room.price.toLocaleString('vi-VN')}đ</span>
-                    <span className="text-white/60 text-xs"> / đêm</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-white/70 text-xs">
-                    <i className="ri-user-line"></i>
-                    <span>{room.capacity} khách</span>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <Link to="/rooms" className="bg-gold text-white text-sm font-medium px-6 py-2.5 rounded-full transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 whitespace-nowrap">
-                  Đặt Phòng Này
-                </Link>
-              </div>
-            </div>
+        {/* First row: 3 large cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {featured.slice(0, 3).map((room, i) => (
+            <RoomCard key={room.id} room={room} index={i} visible={visible} height="h-72 md:h-80" />
           ))}
+        </div>
+
+        {/* Second row: 3 medium cards */}
+        {featured.length > 3 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {featured.slice(3, 6).map((room, i) => (
+              <RoomCard key={room.id} room={room} index={i + 3} visible={visible} height="h-64 md:h-72" />
+            ))}
+          </div>
+        )}
+
+        {/* Third row: 3 medium cards */}
+        {featured.length > 6 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featured.slice(6, 9).map((room, i) => (
+              <RoomCard key={room.id} room={room} index={i + 6} visible={visible} height="h-64 md:h-72" />
+            ))}
+          </div>
+        )}
+
+        <div className={`text-center mt-10 transition-all duration-700 delay-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <Link
+            to="/rooms"
+            className="inline-flex items-center gap-2 px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-white rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap cursor-pointer"
+          >
+            Xem tất cả phòng <i className="ri-arrow-right-line"></i>
+          </Link>
         </div>
       </div>
     </section>
+  );
+}
+
+function RoomCard({ room, index, visible, height }: { room: Room; index: number; visible: boolean; height: string }) {
+  return (
+    <div
+      className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-700 ${height} ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      style={{ transitionDelay: `${(index % 3) * 150 + Math.floor(index / 3) * 100}ms` }}
+    >
+      <img
+        src={room.image}
+        alt={room.name}
+        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 p-5">
+        <span className="text-xs text-gold/80 font-medium">{room.hotel_name}</span>
+        <h3 className="font-serif text-lg font-bold text-white mb-1">{room.name}</h3>
+        <div className="flex items-center justify-between">
+          <div>
+            <span className="text-gold font-semibold text-base">{room.price.toLocaleString('vi-VN')}đ</span>
+            <span className="text-white/60 text-xs"> / đêm</span>
+          </div>
+          <div className="flex items-center gap-1 text-white/70 text-xs">
+            <i className="ri-user-line"></i>
+            <span>{room.capacity} khách</span>
+          </div>
+        </div>
+      </div>
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <Link to="/rooms" className="bg-gold text-white text-sm font-medium px-6 py-2.5 rounded-full transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 whitespace-nowrap">
+          Đặt Phòng Này
+        </Link>
+      </div>
+    </div>
   );
 }
